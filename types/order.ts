@@ -28,3 +28,14 @@ export interface CheckoutOrder {
 }
 
 export type CheckoutResponse = ApiResponse<CheckoutOrder>;
+
+export interface OrderListItem {
+  orderId: string;
+  orderNumber: string;
+  status: OrderStatus;
+  totalAmount: number;
+  totalItems: number;
+  createdAt: string;
+}
+
+export type OrderListResponse = ApiResponse<OrderListItem[]>;
