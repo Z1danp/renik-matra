@@ -29,6 +29,7 @@ export interface CheckoutOrder {
 
 export type CheckoutResponse = ApiResponse<CheckoutOrder>;
 
+// order list
 export interface OrderListItem {
   orderId: string;
   orderNumber: string;
@@ -39,3 +40,43 @@ export interface OrderListItem {
 }
 
 export type OrderListResponse = ApiResponse<OrderListItem[]>;
+
+// order detail
+export interface ShippingAddress {
+  recipientName: string;
+  recipientPhone: string;
+  institutionName: string | null;
+  fullAddress: string;
+  city: string;
+  province: string;
+  postalCode: string;
+}
+
+export interface OrderItem {
+  itemId: string;
+  productName: string;
+  variantSku: string;
+  variantDetails: string;
+  priceAtPurchase: number;
+  quantity: number;
+  subtotal: number;
+}
+
+export interface OrderPayment {
+  status: string;
+  paymentType: string | null;
+  paidAt: string | null;
+}
+
+export interface OrderDetail {
+  orderId: string;
+  orderNumber: string;
+  status: OrderStatus;
+  totalAmount: number;
+  createdAt: string;
+  shippingAddress: ShippingAddress;
+  items: OrderItem[];
+  payment: OrderPayment;
+}
+
+export type OrderDetailResponse = ApiResponse<OrderDetail>;
