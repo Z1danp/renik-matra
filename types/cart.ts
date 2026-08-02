@@ -33,3 +33,7 @@ export interface AddToCartItem {
 }
 
 export type AddToCartResponse = ApiResponse<AddToCartItem>;
+
+export interface UpdateCartItemRequest {
+  quantity: number;
+}
