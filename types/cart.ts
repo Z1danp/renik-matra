@@ -21,3 +21,15 @@ export interface Cart {
 }
 
 export type CartResponse = ApiResponse<Cart>;
+
+export interface AddToCartRequest {
+  productVariantId: string;
+  quantity: number;
+}
+
+export interface AddToCartItem {
+  itemId: string;
+  quantity: number;
+}
+
+export type AddToCartResponse = ApiResponse<AddToCartItem>;
