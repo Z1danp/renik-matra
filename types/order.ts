@@ -80,3 +80,13 @@ export interface OrderDetail {
 }
 
 export type OrderDetailResponse = ApiResponse<OrderDetail>;
+
+// raw payload dari payment gateway (snake_case mengikuti konvensi gateway)
+export interface PaymentWebhookPayload {
+  order_id: string;
+  transaction_status: string;
+  transaction_id: string;
+  payment_type: string;
+  gross_amount: number;
+  settlement_time: string;
+}
