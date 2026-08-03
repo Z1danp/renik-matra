@@ -42,6 +42,12 @@ export interface ProductListQuery {
   sortBy: ProductSort;
 }
 
+export type ProductListErrorResponse = {
+  success: false;
+  message: string;
+  errors: Record<string, string[] | undefined>;
+};
+
 export type ProductListResponse = ApiResponse<Product[]>;
 
 // detail product
