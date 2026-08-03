@@ -41,3 +41,11 @@ AGENTS.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+
+# prisma bala
+.AGENTS
+.claude
+.windsurf
+skills-lock.json
